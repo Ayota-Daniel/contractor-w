@@ -3,18 +3,71 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<!-- Hero section start -->
+<section id="hero">
+    <div class="flex flex-col-reverse md:flex-row mt-12 items-center px-8">
+        <div class="w-1/2 space-y-12 md:space-y-0">
+            <div class="flex flex-col space-y-6 md:space-y-12">
+                <h1 class="text-3xl md:text-6xl font-bold">
+                    Draw up your tailor-made contract
+                </h1>
+                <div class="flex justify-center md:justify-start">
+                    <a href="#" class="bg-purple-700 text-white hover:bg-white hover:text-purple-700 border border-purple-700 text-2xl rounded-full px-3 py-2 self-baseline transition uppercase">
+                        DISCOVER NOW
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <img src="{{asset('assets/images/site-items/hero-image.png')}}" />
+        </div>
+    </div>
+</section>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<section id="etablish-contract">
+    <div id="etablish" class="flex flex-col md:flex-row items-center px-8 m-5 slide-in">
+        <div class="md:w-1/2">
+            <img src="{{asset('assets/images/site-items/contract-etablish.png')}}" class=" object-cover object-center md:h-[520px]"/>
+        </div>
+        <div>
+            <h2 class="md:text-4xl font-bold">
+                Etablish the contract that suits you
+            </h2>
+            <p class="text-gray-500 text-xl">
+                Choose the contract terms that suit you, but not only you, your partners too
+            </p>
+        </div>
+    </div>
+</section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/nobe/work/symfony/contractor/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/nobe/work/symfony/contractor/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+<!-- Section Sign -->
+<section id="contract-sign">
+    <div id="sign" class="flex flex-col-reverse md:flex-row items-center px-8 m-5 slide-in">
+        <div class="md:w-1/2">
+            <h2 class="text-blue-800 md:text-5xl font-bold">
+                Sign only contracts that suit you
+            </h2>
+        </div>
+        <div class="">
+            <img src="{{asset('assets/images/site-items/contract-sign-2.png')}}" class="object-cover object-center md:h-[520px]" />
+        </div>
+    </div>
+</section>
+
+<!-- Section share -->
+<section id="contract-share">
+    <div id="share" class="flex flex-col md:flex-row items-center px-8 m-5 slide-in">
+        <div class="md:w-1/2">
+            <img src="{{asset('assets/images/site-items/contract-share.png')}}" class=" object-cover object-center md:h-[520px]"/>
+        </div>
+        <div>
+            <h2 class="md:text-4xl font-bold">
+                Etablish the contract that suits you
+            </h2>
+            <p class="text-gray-500 text-xl">
+                Choose the contract terms that suit you, but not only you, your partners too
+            </p>
+        </div>
+    </div>
+</section>
 {% endblock %}

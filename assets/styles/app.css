@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .slide-in {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    }
+    .slide-in.active {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}

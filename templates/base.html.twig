@@ -1,19 +1,118 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <link rel="stylesheet" href="{{asset('build/app1.css')}}">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Menu start -->
+    <nav class="flex flex-row justify-between container p-6">
+        <div class="hidden md:block">
+            <img src="{{asset('assets/images/site-items/logo.svg')}}" />
+        </div>
+        <div class="flex flex-row space-x-7">
+            <a href="#" class="text-sm md:text-lg hover:text-purple-600">
+                Etablish a contract
+            </a>
+            <a href="#" class="text-sm md:text-lg hover:text-purple-600">
+                about us
+            </a>
+            <a href="#" class="text-sm md:text-lg hover:text-purple-600">
+                contact us
+            </a>
+            <div class="flex flex-row">
+                <form class="flex flex-row">
+                    <input type="search" placeholder=" Search..."
+                        class="border-l-2 border-y-2 border-purple-400 rounded-l-md focus:outline-none w-[84px] px-2 hover:w-40 focus:w-40 text-sm md:text-lg placeholder:px-2 transition-all" />
+                    <button class="bg-purple-700 border px-2 border-purple-400 rounded-r-md ">
+                        <span class="text-sm text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg></span>
+                    </button>
+                </form>
+            </div>
+            <a href="#" class="text-sm md:text-lg hover:text-purple-600">Sign up</a>
+            <a href="#" class="text-sm md:text-lg hover:text-purple-600">Sign in</a>
+        </div>
+    </nav>
+    <!-- Menu end -->
+    {% block body %}{% endblock %}
+    <footer class="bg-gray-800 mt-6">
+        <div class="flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
+            <!-- block logo + icons -->
+            <div
+                class="flex md:flex-col flex-col-reverse items-center justify-between space-y-12 md:space-y-0 md:items-start">
+                <div class="mx-auto my-6 text-center text-white md:hidden">
+                    Copyright &copy;2022, All Rights Reserved
+                </div>
+                <div>
+                    <img src="{{asset('assets/images/site-items/logo-white.svg')}}" />
+                </div>
+                <!-- link social -->
+                <div class="flex flex-row space-x-4">
+                    <!-- Link 1 -->
+                    <a href="#">
+                        <img src="{{asset('assets/images/site-items/icon-facebook.svg')}}" alt="facebook" class="h-8" />
+                    </a>
+                    <!-- Link 2 -->
+                    <a href="#">
+                        <img src="{{asset('assets/images/site-items/icon-twitter.svg')}}" alt="twitter" class="h-8" />
+                    </a>
+                    <!-- Link 4 -->
+                    <a href="#">
+                        <img src="{{asset('assets/images/site-items/icon-instagram.svg')}}" alt="instagram"
+                            class="h-8" />
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-around space-x-32">
+                <div class="flex flex-col space-y-3 text-white">
+                    <a href="#" class="text-lg hover:text-purple-400">Home</a>
+                    <a href="#" class="text-lg hover:text-purple-400">contract</a>
+                    <a href="#" class="text-lg hover:text-purple-400">AboutUs</a>
+                    <a href="#" class="text-lg hover:text-purple-400">ContactUs</a>
+                </div>
+                <div class="flex flex-col space-y-3 text-white">
+                    <a href="#" class="text-lg hover:text-purple-400">Sign up</a>
+                    <a href="#" class="text-lg hover:text-purple-400">Sign in</a>
+                    <a href="#" class="text-lg hover:text-purple-400">Privacy</a>
+                </div>
+            </div>
+            <!-- Input Container -->
+            <div class="flex flex-col justify-between items-center">
+                <form>
+                    <div class="flex">
+                        <input type="search" placeholder=" Search..."
+                            class="border-l-2 border-y-2 border-white rounded-l-md focus:outline-none w-44 px-2 text-sm md:text-lg placeholder:px-2" />
+                        <button class="bg-purple-700 border px-2 border-white rounded-r-md ">
+                            <span class="text-sm text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                </svg></span>
+                    </div>
+                </form>
+                <div class="hidden text-white md:block">
+                    Copyright &copy;2022, All Rights Reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
